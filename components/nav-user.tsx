@@ -10,6 +10,8 @@ import { Settings } from 'lucide-react';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
 
+// TODO: Fix issue with image resizing when adjusting screen size
+
 export async function NavUser() {
   const sessionUser = await currentUser();
   if (!sessionUser) return <div>Not signed in</div>;
