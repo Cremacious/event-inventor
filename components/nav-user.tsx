@@ -5,18 +5,10 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import {
-  IconCreditCard,
-  IconDotsVertical,
-  IconLogout,
-  IconNotification,
-  IconUserCircle,
-} from '@tabler/icons-react';
 import {
   SidebarMenu,
   SidebarMenuButton,
@@ -24,6 +16,9 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 
+import {
+  IconDotsVertical,
+} from '@tabler/icons-react';
 import { UserProfile } from '@clerk/nextjs';
 
 export function NavUser({
