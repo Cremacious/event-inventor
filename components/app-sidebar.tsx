@@ -38,17 +38,17 @@ const data = {
   navMain: [
     {
       title: 'Dashboard',
-      url: '#',
+      url: '/dashboard',
       icon: IconDashboard,
     },
     {
       title: 'Friends',
-      url: '/friends',
+      url: 'dashboard/friends',
       icon: IconListDetails,
     },
     {
-      title: 'Invites',
-      url: '#',
+      title: 'My Events',
+      url: 'dashboard/events',
       icon: IconChartBar,
     },
   ],
