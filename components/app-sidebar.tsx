@@ -10,7 +10,6 @@ import {
   IconInnerShadowTop,
   IconListDetails,
   IconReport,
-  IconSearch,
   IconSettings,
 } from '@tabler/icons-react';
 import {
@@ -43,31 +42,21 @@ const data = {
     },
     {
       title: 'Friends',
-      url: 'dashboard/friends',
+      url: '/dashboard/friends',
       icon: IconListDetails,
     },
     {
       title: 'My Events',
-      url: 'dashboard/events',
+      url: '/dashboard/events',
       icon: IconChartBar,
     },
   ],
 
   navSecondary: [
     {
-      title: 'Settings',
+      title: 'Get Help',
       url: '#',
       icon: IconSettings,
-    },
-    // {
-    //   title: 'Get Help',
-    //   url: '#',
-    //   icon: IconHelp,
-    // },
-    {
-      title: 'Search',
-      url: '#',
-      icon: IconSearch,
     },
   ],
   documents: [
