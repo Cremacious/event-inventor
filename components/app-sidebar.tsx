@@ -23,6 +23,7 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 
+import Link from 'next/link';
 import { NavDocuments } from '@/components/nav-documents';
 import { NavMain } from '@/components/nav-main';
 import { NavSecondary } from '@/components/nav-secondary';
@@ -41,8 +42,8 @@ const data = {
       icon: IconDashboard,
     },
     {
-      title: 'Friend Requests',
-      url: '#',
+      title: 'Friends',
+      url: '/friends',
       icon: IconListDetails,
     },
     {
@@ -98,10 +99,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <Link href="#">
                 <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">EventInventor.</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
