@@ -19,7 +19,7 @@ export function NavMain() {
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
               tooltip="Quick Create"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
+              className="bg-cyan-500 text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
               <Plus />
               <span>Quick Create</span>
@@ -38,7 +38,7 @@ export function NavMain() {
           <SidebarMenuItem>
             <Link href="/dashboard/events">
               <SidebarMenuButton tooltip="">
-                <CalendarFold className="text-sidebar-foreground/70" />
+                <CalendarFold className="text-cyan-500 text-sidebar-foreground/70" />
                 <span>My Events</span>
               </SidebarMenuButton>
             </Link>
@@ -46,7 +46,7 @@ export function NavMain() {
           <SidebarMenuItem>
             <Link href="/dashboard/friends">
               <SidebarMenuButton tooltip="">
-                <BookUser className="text-sidebar-foreground/70" />
+                <BookUser className="text-sidebar-foreground/70 " />
                 <span>Friends</span>
               </SidebarMenuButton>
             </Link>

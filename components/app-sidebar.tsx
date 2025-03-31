@@ -9,16 +9,17 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import logo from '@/public/logo.png';
 
-import { FlaskConical } from 'lucide-react';
 import Link from 'next/link';
 import { NavDocuments } from '@/components/nav-documents';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
+import Image from 'next/image';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar  collapsible="offcanvas" {...props}>
+    <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -27,8 +28,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <Link href="#">
-                <FlaskConical className="!size-5" />
-                <span className="text-base font-semibold">EventInventor.</span>
+                <Image
+                  src={logo}
+                  className="object-contain"
+                  fill
+                  alt="Eventor"
+                />
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
