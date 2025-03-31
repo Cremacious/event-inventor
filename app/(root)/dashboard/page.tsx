@@ -1,3 +1,7 @@
 export default function Page() {
-  return <>Dashboard</>;
+  return (
+    <>
+      <div className="newScreen">Dashboard</div>
+    </>
+  );
 }
