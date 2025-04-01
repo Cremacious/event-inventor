@@ -47,7 +47,7 @@ const EventsPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-green-200 p-8 rounded-2xl shadow-lg">
+        <div className="customCyan p-8 rounded-2xl shadow-lg">
           <div className="text-center mb-6 font-bold text-lg">
             Your Recent Events
           </div>

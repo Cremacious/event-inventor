@@ -133,6 +133,6 @@
 }
 
 .customCyan {
-  --custom-dark: #00b8db;
-  background-color: var(--custom-dark);
+  --custom-cyan: #00b8db; /* Define the custom cyan color */
+  background-color: var(--custom-cyan); /* Apply the custom cyan color */
 }

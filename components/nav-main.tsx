@@ -1,5 +1,5 @@
 'use client';
-
+import { useSidebar } from '@/components/ui/sidebar';
 import { BookUser, CalendarFold, LayoutDashboard, Plus } from 'lucide-react';
 import {
   SidebarGroup,
@@ -12,12 +12,14 @@ import {
 import Link from 'next/link';
 
 export function NavMain() {
+  const { toggleSidebar } = useSidebar();
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
+              onClick={toggleSidebar}
               tooltip="Quick Create"
               className="bg-cyan-500 text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
@@ -29,7 +31,7 @@ export function NavMain() {
         <SidebarMenu>
           <SidebarMenuItem>
             <Link href="/dashboard">
-              <SidebarMenuButton tooltip="">
+              <SidebarMenuButton onClick={toggleSidebar} tooltip="">
                 <LayoutDashboard className="text-sidebar-foreground/70" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
@@ -37,15 +39,15 @@ export function NavMain() {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <Link href="/dashboard/events">
-              <SidebarMenuButton tooltip="">
-                <CalendarFold className="text-cyan-500 text-sidebar-foreground/70" />
+              <SidebarMenuButton onClick={toggleSidebar} tooltip="">
+                <CalendarFold className="text-sidebar-foreground/70" />
                 <span>My Events</span>
               </SidebarMenuButton>
             </Link>
           </SidebarMenuItem>
           <SidebarMenuItem>
             <Link href="/dashboard/friends">
-              <SidebarMenuButton tooltip="">
+              <SidebarMenuButton onClick={toggleSidebar} tooltip="">
                 <BookUser className="text-sidebar-foreground/70 " />
                 <span>Friends</span>
               </SidebarMenuButton>
