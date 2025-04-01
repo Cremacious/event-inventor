@@ -1,9 +1,7 @@
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import Link from 'next/link';
-import image from '@/public/images/stock.jpg';
-import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import { Cake, Calendar1, PartyPopper, Sparkles } from 'lucide-react';
+import EventCard from '@/components/shared/events/event-card';
+
 const EventsPage = () => {
   return (
     <>
@@ -54,66 +52,10 @@ const EventsPage = () => {
             Your Recent Events
           </div>
           <div className="grid gap-4 grid-cols-1 md:grid-cols-4 justify-evenly">
-            <Link href="/">
-              <Card className="bg-teal-100 border-8 border-teal-50 flex flex-col rounded-2xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform h-auto self-start">
-                <CardContent className="w-full aspect-[4/3] relative">
-                  <CardTitle className="md:text-lg font-bold text-center justify-center items-center flex flex-col text-gray-800">
-                    <PartyPopper className="mb-2" />
-                    <div className="flex">Kelly&#39;s Graduation</div>
-                  </CardTitle>
-                  <Image
-                    src={image}
-                    alt="name"
-                    className="object-contain flex px-4 pt-4 rounded-3xl"
-                  />
-                </CardContent>
-              </Card>
-            </Link>
-            <Link href="/">
-              <Card className="bg-teal-100 border-8 border-teal-50 flex flex-col rounded-2xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform h-auto self-start">
-                <CardContent className="w-full aspect-[4/3] relative">
-                  <CardTitle className="md:text-lg font-bold text-center justify-center items-center flex flex-col text-gray-800">
-                    <Cake className="mb-2" />
-                    <div className="flex">First Birthday</div>
-                  </CardTitle>
-                  <Image
-                    src={image}
-                    alt="name"
-                    className="object-contain flex px-4 pt-4 rounded-3xl"
-                  />
-                </CardContent>
-              </Card>
-            </Link>
-            <Link href="/">
-              <Card className="bg-teal-100 border-8 border-teal-50 flex flex-col rounded-2xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform h-auto self-start">
-                <CardContent className="w-full aspect-[4/3] relative">
-                  <CardTitle className="md:text-lg font-bold text-center justify-center items-center flex flex-col text-gray-800">
-                    <Sparkles className="mb-2" />
-                    <div className="flex">Christmas 2024</div>
-                  </CardTitle>
-                  <Image
-                    src={image}
-                    alt="name"
-                    className="object-contain flex px-4 pt-4 rounded-3xl"
-                  />
-                </CardContent>
-              </Card>
-            </Link>
-            <Link href="/">
-              <Card className="bg-teal-100 border-8 border-teal-50 flex flex-col rounded-2xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform h-auto self-start">
-                <CardContent className="w-full aspect-[4/3] relative">
-                  <CardTitle className="md:text-lg font-bold text-center justify-center items-center flex flex-col text-gray-800">
-                    <Calendar1 className="mb-2" />
-                    <div className="flex">Fourth Anniversary</div>
-                  </CardTitle>
-                  <Image
-                    src={image}
-                    alt="name"
-                    className="object-contain flex px-4 pt-4 rounded-3xl"
-                  />
-                </CardContent>
-              </Card>
-            </Link>
+            <EventCard />
+            <EventCard />
+            <EventCard />
+            <EventCard />
           </div>
         </div>
       </div>

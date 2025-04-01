@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <>
-      <div className="newScreen">Dashboard</div>
+      <div className="newScreen">Dashfboard</div>
     </>
   );
 }

@@ -126,3 +126,13 @@
     @apply bg-white p-8 min-h-screen mx-5 rounded-2xl shadow-lg text-slate-800;
   }
 }
+
+.customDark {
+  --custom-dark: #171717;
+  background-color: var(--custom-dark);
+}
+
+.customCyan {
+  --custom-dark: #00b8db;
+  background-color: var(--custom-dark);
+}
