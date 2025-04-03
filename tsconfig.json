@@ -13,7 +13,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    // Removed invalid 'theme' property as it does not belong in tsconfig.json
     "plugins": [
       {
         "name": "next"

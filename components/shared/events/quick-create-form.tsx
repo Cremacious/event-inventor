@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { CalendarIcon, Plus } from 'lucide-react';
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
+import { Popover, PopoverContent, PopoverTrigger } from '../../ui/popover';
 import {
   Select,
   SelectContent,
@@ -19,10 +19,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-import { Button } from './ui/button';
-import { Calendar } from './ui/calendar';
+import { Button } from '../../ui/button';
+import { Calendar } from '../../ui/calendar';
 import Image from 'next/image';
-import { Input } from './ui/input';
+import { Input } from '../../ui/input';
 import { cn } from '@/lib/utils';
 import flaskImage from '@/public/images/icons/flask-bubble.png';
 import { format } from 'date-fns';

@@ -10,7 +10,7 @@ import {
 
 import { LayoutDashboard } from 'lucide-react';
 import Link from 'next/link';
-import QuickCreateForm from './quick-create-form';
+import QuickCreateForm from './shared/events/quick-create-form';
 import { useSidebar } from '@/components/ui/sidebar';
 
 export function NavMain() {
@@ -20,7 +20,7 @@ export function NavMain() {
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
-            <SidebarMenuButton className="bg-cyan-500 justify-center text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear">
+            <SidebarMenuButton className="backgroundCyan justify-center text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear">
               <QuickCreateForm />
             </SidebarMenuButton>
           </SidebarMenuItem>

@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import EventCard from '@/components/shared/events/event-card';
+import Link from 'next/link';
 
 const EventsPage = () => {
   return (
@@ -47,7 +47,7 @@ const EventsPage = () => {
             </div>
           </div>
         </div>
-        <div className="customCyan p-8 rounded-2xl shadow-lg">
+        <div className="cyanBackground p-8 rounded-2xl shadow-lg">
           <div className="text-center mb-6 font-bold text-lg">
             Your Recent Events
           </div>

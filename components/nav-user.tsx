@@ -11,7 +11,10 @@ export async function NavUser() {
   const sessionUser = await currentUser();
   if (!sessionUser) return <div>Not signed in</div>;
   return (
-    <SidebarMenu className="bg-cyan-500 rounded-xl p-2">
+    <SidebarMenu
+      className="backgroundCyan
+ rounded-xl p-2"
+    >
       <SidebarMenuItem>
         <div className=" flex flex-row">
           <UserButton />
@@ -30,7 +33,7 @@ export async function NavUser() {
             className=" cursor-pointer hover:scale-105 transition-transform bg-slate-800 justify-center rounded-full p-2 "
           >
             {' '}
-            <Settings className="text-cyan-500" />
+            <Settings className="textCyan" />
           </Link>
         </div>
       </SidebarMenuItem>

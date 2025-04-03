@@ -94,7 +94,7 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgb(53, 191, 216);
+  --border: rgb(59, 204, 205);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -127,12 +127,17 @@
   }
 }
 
-.customDark {
+.backgroundDark {
   --custom-dark: #171717;
   background-color: var(--custom-dark);
 }
 
-.customCyan {
-  --custom-cyan: #00b8db; /* Define the custom cyan color */
-  background-color: var(--custom-cyan); /* Apply the custom cyan color */
+.backgroundCyan {
+  --custom-dark: #3bcccd;;
+  background-color: var(--custom-dark);
+}
+
+.textCyan {
+  --custom-cyan: #3bcccd;
+  color: var(--custom-cyan);
 }
