@@ -9,7 +9,6 @@ import { checkUser } from '@/lib/actions/user.action';
 
 export async function NavUser() {
   const sessionUser = await checkUser();
-  // const checkedUser = await checkUser();
   if (!sessionUser) return <div>Not signed in</div>;
   return (
     <SidebarMenu

@@ -34,3 +34,4 @@ export const checkUser = async () => {
 
   return newUser;
 };
+

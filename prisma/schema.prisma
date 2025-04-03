@@ -19,16 +19,16 @@ model User {
   events Event[]
 }
 
-   model Event {
-      id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-      userId      String
-      name        String
-      type    String
-      images      String[]
-      date       String
-      visibility String
-      description String
-      createdAt   DateTime     @default(now()) @db.Timestamp(6)
-      user User @relation(fields: [userId], references: [clerkUserId], onDelete: Cascade)
-        @@index([userId])
-    }
+model Event {
+  id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId      String
+  name        String
+  type    String
+  images      String[]
+  date       String
+  visibility String
+  description String
+  createdAt   DateTime     @default(now()) @db.Timestamp(6)
+  user User @relation(fields: [userId], references: [clerkUserId], onDelete: Cascade)
+    @@index([userId])
+}
