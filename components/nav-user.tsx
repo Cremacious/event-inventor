@@ -2,14 +2,12 @@ import { SidebarMenu, SidebarMenuItem } from '@/components/ui/sidebar';
 
 import Link from 'next/link';
 import { Settings } from 'lucide-react';
-import { UserButton } from '@clerk/nextjs';
-import { checkUser } from '@/lib/actions/user.actions';
+// import { checkUser } from '@/lib/actions/user.actions';
 
 // TODO: Fix issue with image resizing when adjusting screen size
 
 export async function NavUser() {
-  const sessionUser = await checkUser();
-  if (!sessionUser) return <div>Not signed in</div>;
+ 
   return (
     <SidebarMenu
       className="backgroundCyan
@@ -17,11 +15,11 @@ export async function NavUser() {
     >
       <SidebarMenuItem>
         <div className=" flex flex-row">
-          <UserButton />
+   
           <div className="ml-2 grid flex-1 text-left text-sm text-slate-800">
-            <span className="truncate font-medium">{sessionUser?.name}</span>
+            <span className="truncate font-medium">Name</span>
             <span className="text-slate-800 truncate text-xs">
-              {sessionUser?.email}
+             Email
             </span>
           </div>
           <Link

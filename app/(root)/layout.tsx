@@ -2,11 +2,11 @@ import '@/assets/styles/globals.css';
 
 import { Geist, Geist_Mono } from 'next/font/google';
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
-import { ThemeProvider } from '@/components/theme-provider';
+
 import { AppSidebar } from '@/components/app-sidebar';
-import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { SiteHeader } from '@/components/site-header';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -64,6 +64,6 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+
   );
 }

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { SignIn } from '@clerk/nextjs';
+
 import stock from '@/public/images/stock.jpg';
 
 const SignInPage = () => {
@@ -8,7 +8,7 @@ const SignInPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
         {/* Login Form */}
         <div className="flex items-center justify-center p-4">
-          <SignIn forceRedirectUrl="/dashboard" />
+     
         </div>
 
         {/* Image */}
