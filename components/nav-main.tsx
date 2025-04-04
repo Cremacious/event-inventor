@@ -10,7 +10,7 @@ import {
 
 import { LayoutDashboard } from 'lucide-react';
 import Link from 'next/link';
-import QuickCreateForm from './shared/events/quick-create-form';
+import QuickCreateForm from './shared/events/pop-form';
 import { useSidebar } from '@/components/ui/sidebar';
 
 export function NavMain() {

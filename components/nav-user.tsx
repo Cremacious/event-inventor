@@ -3,7 +3,7 @@ import { SidebarMenu, SidebarMenuItem } from '@/components/ui/sidebar';
 import Link from 'next/link';
 import { Settings } from 'lucide-react';
 import { UserButton } from '@clerk/nextjs';
-import { checkUser } from '@/lib/actions/user.action';
+import { checkUser } from '@/lib/actions/user.actions';
 
 // TODO: Fix issue with image resizing when adjusting screen size
 
