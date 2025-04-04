@@ -28,6 +28,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   account       Account[]
   session       Session[]
+  events        Event[]
 }
 
 model Account {
@@ -65,18 +66,15 @@ model VerificationToken {
 }
 
 model Event {
-  id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name        String
-  slug        String       @unique(map: "product_slug_idx")
-  category    String
-  images      String[]
-  brand       String
-  description String
-  stock       Int
-  price       Decimal      @default(0) @db.Decimal(12, 2)
-  rating      Decimal      @default(0) @db.Decimal(3, 2)
-  numReviews  Int          @default(0)
-  isFeatured  Boolean      @default(false)
-  banner      String?
-  createdAt   DateTime     @default(now()) @db.Timestamp(6)
+   id          String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+   userId      String       @db.Uuid // Change this to Uuid to match the User model's `id` type
+   name        String
+   type        String
+   images      String[]
+   date        String
+   visibility  String
+   description String
+   createdAt   DateTime     @default(now()) @db.Timestamp(6)
+   user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+   @@index([userId])
 }

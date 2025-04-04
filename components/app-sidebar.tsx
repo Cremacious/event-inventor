@@ -14,7 +14,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { NavDocuments } from '@/components/nav-documents';
 import { NavMain } from '@/components/nav-main';
-// import { NavUser } from '@/components/nav-user';
+import { NavUser } from '@/components/nav-user';
 import logo from '@/public/logo.png';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -44,7 +44,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavDocuments />
       </SidebarContent>
       <SidebarFooter>
-        {/* <NavUser /> */}
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   );
