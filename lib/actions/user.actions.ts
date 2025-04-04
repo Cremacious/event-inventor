@@ -1,57 +1,34 @@
-import { currentUser } from '@clerk/nextjs/server';
-import { db } from '@/lib/db';
+'use server';
 
-export const checkUser = async () => {
-  const user = await currentUser();
+import { signIn, signOut } from '@/auth';
 
-  // Check for current logged in clerk user
-  if (!user) {
-    return null;
-  }
+import { isRedirectError } from 'next/dist/client/components/redirect-error';
+import { signInFormSchema } from '../validators';
 
-  // Check if the user is already in the database by Clerk user ID
-  const loggedInUser = await db.user.findUnique({
-    where: {
-      clerkUserId: user.id,
-    },
-  });
-
-  // If user is in database, return user
-  if (loggedInUser) {
-    return loggedInUser;
-  }
-
-  // Check if a user with the same email already exists
-  const existingUserByEmail = await db.user.findUnique({
-    where: {
-      email: user.emailAddresses[0].emailAddress,
-    },
-  });
-
-  if (existingUserByEmail) {
-    // Update the existing user with the Clerk user ID and return the updated user
-    const updatedUser = await db.user.update({
-      where: {
-        email: user.emailAddresses[0].emailAddress,
-      },
-      data: {
-        clerkUserId: user.id,
-        name: `${user.firstName} ${user.lastName}`,
-        imageUrl: user.imageUrl,
-      },
+// Sign in the user with credentials
+export async function signInWithCredentials(
+  prevState: unknown,
+  formData: FormData
+) {
+  try {
+    const user = signInFormSchema.parse({
+      email: formData.get('email'),
+      password: formData.get('password'),
     });
-    return updatedUser;
+
+    await signIn('credentials', user);
+
+    return { success: true, message: 'Signed in successfully' };
+  } catch (error) {
+    if (isRedirectError(error)) {
+      throw error;
+    }
+
+    return { success: false, message: 'Invalid email or password' };
   }
+}
 
-  // If not in database, create new user
-  const newUser = await db.user.create({
-    data: {
-      clerkUserId: user.id,
-      name: `${user.firstName} ${user.lastName}`,
-      imageUrl: user.imageUrl,
-      email: user.emailAddresses[0].emailAddress,
-    },
-  });
-
-  return newUser;
-};
+// Sign the user out
+export async function signOutUser() {
+  await signOut();
+}
