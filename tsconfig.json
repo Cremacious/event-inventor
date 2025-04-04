@@ -18,6 +18,7 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
@@ -25,3 +26,24 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
+// npm install --save module-alias
+
+// ``````json
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./*"]
+//     }
+//   }
+// }
+// ``````json
+// {
+//   "scripts": {
+//     "start": "next start"
+//   },
+//   "_moduleAliases": {
+//     "@": "./"
+//   }
+// }
