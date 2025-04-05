@@ -10,6 +10,9 @@ export async function middleware(req: Request) {
   if (pathname.startsWith('/sign-in')) {
     return NextResponse.next();
   }
+  if (pathname.startsWith('/api/auth')) {
+    return NextResponse.next();
+  }
 
   // If no token is found, redirect to the sign-in page
   if (!token) {
