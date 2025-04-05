@@ -1,6 +1,7 @@
 'use server';
 
 import { auth } from '@/auth';
+import { formatError } from '../utils';
 import { insertEventSchema } from '../validators';
 import { prisma } from '@/db/prisma';
 import { z } from 'zod';
@@ -28,12 +29,12 @@ export async function createEvent(data: z.infer<typeof insertEventSchema>) {
         userId: dbUser.id,
       },
     });
-    return { success: true, message: 'Event created successfully' };
+    return { success: true, message: `Event ${event.name} created successfully` };
   } catch (error) {
     console.error('Error in createEvent:', error);
     return {
       success: false,
-      message: `${error}`,
+      message: formatError(error),
     };
   }
 }
