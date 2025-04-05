@@ -7,16 +7,12 @@ import Link from 'next/link';
 import { signUp } from '@/lib/actions/user.actions';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
-import { useSearchParams } from 'next/navigation';
 
 const SignUpForm = () => {
   const [data, action] = useActionState(signUp, {
     message: '',
     success: false,
   });
-
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/';
 
   const SignUpButton = () => {
     const { pending } = useFormStatus();
@@ -32,7 +28,6 @@ const SignUpForm = () => {
       action={action}
       className="bg-white p-6 rounded-md shadow-md space-y-4"
     >
-      <input type="hidden" name="callbackUrl" value={callbackUrl} />
       <div className="space-y-6">
         <div>
           <Label htmlFor="name">Name</Label>

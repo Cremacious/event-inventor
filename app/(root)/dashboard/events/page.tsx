@@ -1,12 +1,10 @@
+export const dynamic = 'force-dynamic';
+
+import AllEventsCard from '@/components/shared/events/all-events-card';
 import { Button } from '@/components/ui/button';
-import { Event } from '@/types';
-import EventCard from '@/components/shared/events/event-card';
 import Link from 'next/link';
-import { getAllUserEvents } from '@/lib/actions/event.actions';
 
-const EventsPage = async () => {
-  const events = await getAllUserEvents();
-
+const EventsPage = () => {
   return (
     <>
       <div className="bg-white p-8 min-h-screen mx-5 rounded-2xl shadow-lg">
@@ -51,20 +49,7 @@ const EventsPage = async () => {
             </div>
           </div>
         </div>
-        <div className="cyanBackground p-8 rounded-2xl shadow-lg">
-          <div className="text-center mb-6 font-bold text-lg">
-            Your Recent Events
-          </div>
-          <div className="grid gap-4 grid-cols-1 md:grid-cols-4 justify-evenly">
-            {events.length === 0 ? (
-              <div className="text-center text-gray-500">No events found.</div>
-            ) : (
-              events.map((event: Event) => (
-                <EventCard key={event.name} event={event} />
-              ))
-            )}
-          </div>
-        </div>
+        <AllEventsCard />
       </div>
     </>
   );
