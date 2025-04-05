@@ -6,7 +6,7 @@ export async function middleware(req: Request) {
 
   // If no token is found, redirect to the sign-in page
   if (!token) {
-    const url = new URL('/', req.url);
+    const url = new URL('/sign-in', req.url);
     return NextResponse.redirect(url);
   }
 
