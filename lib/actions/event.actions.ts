@@ -29,12 +29,43 @@ export async function createEvent(data: z.infer<typeof insertEventSchema>) {
         userId: dbUser.id,
       },
     });
-    return { success: true, message: `Event ${event.name} created successfully` };
+    return {
+      success: true,
+      message: `Event ${event.name} created successfully`,
+    };
   } catch (error) {
     console.error('Error in createEvent:', error);
     return {
       success: false,
       message: formatError(error),
     };
+  }
+}
+
+export async function getAllUserEvents() {
+  try {
+    const session = await auth();
+    if (!session) {
+      throw new Error('User not authenticated');
+    }
+    const userId = session?.user?.id;
+    const dbUser = await prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+    if (!dbUser) {
+      throw new Error('User not found in the database.');
+    }
+
+    const events = await prisma.event.findMany({
+      where: {
+        userId: dbUser.id,
+      },
+    });
+    return events;
+  } catch (error) {
+    console.error('Error in getAllUserEvents:', error);
+    return []
   }
 }
