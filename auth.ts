@@ -2,7 +2,6 @@ import { compareSync } from 'bcrypt-ts-edge';
 import type { NextAuthConfig } from 'next-auth';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { authConfig } from './auth.config';
 import { prisma } from '@/db/prisma';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 
@@ -55,7 +54,6 @@ export const config = {
     }),
   ],
   callbacks: {
-    ...authConfig.callbacks,
     async session({ session, user, trigger, token }: any) {
       // Set the user id on the session
       session.user.id = token.sub;
