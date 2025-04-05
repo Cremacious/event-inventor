@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { createEvent } from '@/lib/actions/event.actions';
 import { insertEventSchema } from '@/lib/validators';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -17,19 +18,11 @@ const CreateEventForm = () => {
   const onSubmit: SubmitHandler<z.infer<typeof insertEventSchema>> = async (
     data
   ) => {
-    console.log(data);
-    const response = await fetch('/api/events', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    const res = await response.json();
-    if (res.success) {
-      toast.success(res.message);
+    const response = await createEvent(data); 
+    if (response.success) {
+      toast.success(response.message);
     } else {
-      toast.error(res.message);
+      toast.error(response.message);
     }
   };
 
