@@ -8,10 +8,6 @@ export const insertEventSchema = z.object({
   visibility: z.string().min(1, { message: 'Visibility is required' }),
 });
 
-// export const insertEventSchema = z.object({
-//   name: z.string().min(1, 'Event name is required'),
-// });
-
 export const signUpFormSchema = z
   .object({
     name: z.string().min(3, 'Name must be at least 3 characters'),

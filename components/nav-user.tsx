@@ -1,14 +1,16 @@
 import { SidebarMenu, SidebarMenuItem } from '@/components/ui/sidebar';
-import { auth, signOut } from '@/auth';
 
-import { Button } from './ui/button';
 import Link from 'next/link';
 import { Settings } from 'lucide-react';
 
-export async function NavUser() {
-  const session = await auth();
+// import { auth, signOut } from '@/auth';
 
-  const user = session?.user;
+// import { Button } from './ui/button';
+
+export async function NavUser() {
+  // const session = await auth();
+
+  // const user = session?.user;
 
   // const handleSignOut = async () => {
   //   await signOut();
@@ -25,10 +27,8 @@ export async function NavUser() {
             Sign Out
           </Button> */}
           <div className="ml-2 grid flex-1 text-left text-sm text-slate-800">
-            <span className="truncate font-medium">{user?.name}</span>
-            <span className="text-slate-800 truncate text-xs">
-              {user?.email}
-            </span>
+            <span className="truncate font-medium">name</span>
+            <span className="text-slate-800 truncate text-xs">email</span>
           </div>
           <Link
             href="/dashboard/settings"

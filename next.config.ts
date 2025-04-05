@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // appDir: true, // Removed as it is not a valid key
+  },
 };
 
 export default nextConfig;
