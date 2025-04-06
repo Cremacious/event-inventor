@@ -6,10 +6,14 @@ import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
 
 const SignInPage = async () => {
-  const session = await auth();
+  try {
+    const session = await auth();
 
-  if (session) {
-    return redirect('/dashboard');
+    if (session) {
+      return redirect('/dashboard');
+    }
+  } catch (error) {
+    console.error('Error in SignInPage:', error);
   }
   return (
     <div className="h-screen w-full flex items-center justify-center">
